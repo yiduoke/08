@@ -1,16 +1,20 @@
 <!DOCTYPE.html>
 <html>
-    <head>
-        <title>Log In</title>
-    </head>
-    <body>
-        <form method="POST" action="login">
-            Username:
-            <input type="text" name="username">
-            <br>       
-            Password:
-            <input type="password" name="password">
-            <input type="submit" value="Submit">
-        </form>    
-    </body>
+  <head>
+    <title>Log In</title>
+  </head>
+  <body>
+    {% set messages=get_flashed_messages() %}
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+    <form method="POST" action="auth">
+      Username:
+      <input type="text" name="username">
+      <br>       
+      Password:
+      <input type="password" name="password">
+      <input type="submit" value="Submit">
+    </form>    
+  </body>
 </html>
